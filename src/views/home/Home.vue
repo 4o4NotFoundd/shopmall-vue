@@ -141,6 +141,7 @@
         LoadMore(){
             this.getHomegoods(this.currentType)
         },
+        //继续！
     }
   }
 </script>
