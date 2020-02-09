@@ -1,5 +1,5 @@
 <template>
-  <div class="goods-item">
+  <div class="goods-item" @click="itemClick">
     <img :src="goodsItem.show.img" alt="" @load="loadImg">
 <!--    loadim事件监听图片是否加载完成，完成则refresh，重新计算srrollheight-->
     <div class="goods-info">
@@ -35,6 +35,10 @@
             loadImg(){
                 this.$bus.$emit('loadImgfinish')
 // 监听事件
+            },
+            itemClick(){
+              // console.log('跳转到详情页面');
+              this.$router.push('/detail/' + this.goodsItem.iid)
             }
         }
 
