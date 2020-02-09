@@ -5,6 +5,7 @@ import router from './router'
 
 
 Vue.config.productionTip = false
+// Vue.prototype.$el= new Vue()
 
 Vue.prototype.$bus= new Vue()
 // 将bus注册为一个vue实例，这样就可以使用on监听方法，在Home.vue中

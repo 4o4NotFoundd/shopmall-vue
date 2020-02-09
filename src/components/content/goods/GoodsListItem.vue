@@ -1,6 +1,7 @@
 <template>
   <div class="goods-item">
     <img :src="goodsItem.show.img" alt="" @load="loadImg">
+<!--    loadim事件监听图片是否加载完成，完成则refresh，重新计算srrollheight-->
     <div class="goods-info">
       <p>{{goodsItem.title}}</p>
       <span class="price">{{goodsItem.price}}</span>
@@ -33,7 +34,7 @@
         methods:{
             loadImg(){
                 this.$bus.$emit('loadImgfinish')
-
+// 监听事件
             }
         }
 

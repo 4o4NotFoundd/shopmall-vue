@@ -7,6 +7,7 @@
         <span>{{item}}</span>
       </div>
     </div>
+<!--  选中的颜色变化-->
 </template>
 
 <script>
@@ -21,7 +22,7 @@
         props:{
             title:{
                 type:Array,
-                default(){
+                default(){//default是对象的时候必须用函数
                     return []
                 }
             }
@@ -39,9 +40,10 @@
 <style scoped>
 .tab-control{
   display: flex;
-  position: sticky;
-  top: 44px;
-  z-index: 6;
+  /*flex布局，flex 1 均等分*/
+  /*position: sticky;*/
+  /*top: 44px;*/
+  z-index: 9;
   background-color: var(--color-background);
 }
   .tab-control-item{
