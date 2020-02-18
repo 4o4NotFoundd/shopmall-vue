@@ -1,6 +1,6 @@
 <template>
   <div class="goods-item" @click="itemClick">
-    <img :src="goodsItem.show.img" alt="" @load="loadImg">
+    <img :src="showImage" alt="" @load="loadImg">
 <!--    loadim事件监听图片是否加载完成，完成则refresh，重新计算srrollheight-->
     <div class="goods-info">
       <p>{{goodsItem.title}}</p>
@@ -23,6 +23,11 @@
 <script>
     export default {
         name: "GoodsListItem",
+        computed: {
+          showImage() {
+            return this.goodsItem.image || this.goodsItem.show.img
+          }
+        },
         props:{
             goodsItem:{
                 type:Object,

@@ -1,37 +1,13 @@
 <template>
   <div class="wrapper" ref="aaaa">
-    <div>
+    <div >
+      <div @click="clickTo">
+        <span>点击下滑</span>
+      </div>
       <ul class="content">
         <li>1</li>
         <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
+
         <li>1</li>
       </ul>
 
@@ -65,6 +41,11 @@
         this.scroll.on('pullingUp',()=>{
             console.log('shangla');
         })
+    },
+    methods: {
+      clickTo(){
+        this.$refs.scroll.scrollTo(0, -1200, 400)
+      }
     }
   }
 </script>

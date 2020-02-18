@@ -18,15 +18,15 @@ export function request(config) {
   })
 //拦截请求
   instance.interceptors.request.use(config => {
-    console.log('请求拦截');
+    // console.log('请求拦截');
     return config
   },err=> {
-    // console.log(err);
+    console.log(err);
   })
 
 //响应拦截
   instance.interceptors.response.use(res => {
-    console.log('响应拦截，请求成功');
+    // console.log('响应拦截，请求成功');
     return res.data
   }, err => {
     console.log(err);

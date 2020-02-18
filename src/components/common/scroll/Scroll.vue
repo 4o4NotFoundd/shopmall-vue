@@ -48,8 +48,9 @@
         },
         methods:{
             //返回到xy位置页面
-            scrollTo(x, y, time=500){
-                this.scroll && this.scroll.scrollTo(x, y, time)
+            scrollTo(x, y, time){
+                // this.scroll && this.scroll.scrollTo && this.scroll.scrollTo(x, y, time)
+                this.scroll.scrollTo(x, y, time)
             },
             //上拉加载完数据
             finishPullUp(){

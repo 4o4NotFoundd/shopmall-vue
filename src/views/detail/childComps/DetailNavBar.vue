@@ -3,11 +3,12 @@
       <div slot="left" class="backImg" @click="clickBack">
         <img src="~assets/img/common/back.svg" alt="">
       </div>
-      <div slot="center" class="nav-bar-title">
+      <div slot="center" class="nav-bar-title" ref="scroll1">
         <div v-for="(item,index) in title"
              class="title-item"
-             @click="currentTitle(index)"
-             :class="{active: currentIndex===index}">{{item}}
+             :class="{active: currentIndex===index}"
+             @click="titleClick(index)">
+          <span>{{item}}</span>
         </div>
       </div>
     </nav-bar>
@@ -15,11 +16,13 @@
 
 <script>
     import NavBar from "components/common/navbar/NavBar";
+    import Scroll from "components/common/scroll/Scroll";
 
     export default {
         name: "DetailNavBar",
         components: {
-          NavBar
+          NavBar,
+          Scroll
         },
         data() {
           return {
@@ -28,11 +31,14 @@
           }
         },
         methods: {
-          currentTitle(index){
+          titleClick(index){
             this.currentIndex = index;
+            // console.log(index);
+            this.$emit('titleClick',index)
           },
           clickBack() {
             this.$router.back()
+
           }
         }
     }

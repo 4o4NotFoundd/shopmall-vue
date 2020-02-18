@@ -4,7 +4,8 @@
     <tab-control :title="['流行','新款','精选']"
                  @tabClick="tabClick"
                  ref="tabControl1"
-                 class="tab-control" v-show="isFixed"/>
+                 class="tab-control"
+                 v-show="isFixed"/>
     <scroll class="wrapper"
             ref="scroll"
             :probe-type="3"
@@ -158,7 +159,8 @@
         },
         //点击返回到顶部
         returnTop(){
-            this.$refs.scroll.scrollTo(0, 0, 1000)
+            this.$refs.scroll.scrollTo(0, -100, 1000)
+            console.log(scrollTo);
           // 在其他地方使用scroll组件中的方法--$refs.scroll.方法，scrollTo（x,y,time)
         },
         //上拉，在y>1000时出现top图标,吸顶效果
